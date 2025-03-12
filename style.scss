@@ -1,0 +1,129 @@
+@import './reset';
+
+$main-color: #537069;
+$second-color: #6c9288;
+$Diagram: #b5c8c4;
+$column: #f7f9f8;
+$white-text: #fff;
+$black-text: #000;
+
+body {
+    background-color: #fffdf6;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+header {
+    width: inherit;
+    height: 40px;
+    background-color: $main-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        color: $white-text;
+        font-size: 24px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 600;
+    }
+}
+
+main {
+    height: 100%;
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .buttons-settings {
+        margin-top: 6px;
+        width: 40%;
+        padding: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        background-color: $second-color;
+
+        .go {
+            border-radius: 12px;
+            border: 0;
+            height: 40px;
+            background-color: $Diagram;
+
+            &:hover {
+                background-color: #537069;
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 20px;
+                font-weight: 600;
+                color: $white-text;
+
+            }
+
+            label {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 18px;
+                font-weight: 600;
+                color: $white-text;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+
+    }
+
+    .diagram-field {
+        height: 500px;
+        margin-top: 30px;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        // transform: scale(-1, 1); //reverse
+
+
+        width: 90%;
+        background-color: $Diagram;
+
+        .column {
+            background-color: #fff;
+            width: 100%;
+            height: 80px; //висота настраивается js 
+            border-radius: 1em 1em 0 0;
+            margin-right: 2px;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &:hover {
+                background-color: #e7e5e5;
+            }
+        }
+    }
+}

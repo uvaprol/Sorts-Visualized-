@@ -1,24 +1,52 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+
+import { addListener } from './scripts/starter.js'
+
 
 document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
+<div class='main'>
+  <header>
+    <h1>Sort Visualized</h1>
+  </header>
+  <main>
+   <section class="buttons-settings">
+    <div>
+      <p>Выберите сортировку </p>
+      <label>
+        <input type="radio" name="typeSorted" value="BubbleSort" > Сортировка пузырьком
+      </label>
+      <label>
+        <input type="radio" name="typeSorted" value="ShuffleSort" > Сортировка тряской
+      </label>
+      <label>
+        <input type="radio" name="typeSorted" value="SelectionSort" checked> Сортировка выбором
+      </label>
+     
     </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
+    <div>
+      <p>Выберите скорость </p>
+      <label>
+        <input type="radio" name="speed" value="1000" > Медленно
+      </label>
+      <label>
+        <input type="radio" name="speed" value="500"> Нормально
+      </label>
+      <label>
+        <input type="radio" name="speed" value="1" checked> Быстрая
+      </label>
+
+      <button class="go" id="go">Погнали</button>
+    </div>
+
+  </section>
+      <section class="diagram-field">
+    
+  </section>
+  </main>
+  
+
+    <div/>
 `
 
-setupCounter(document.querySelector('#counter'))
+
+addListener(document.querySelector('#go'))
